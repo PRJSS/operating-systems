@@ -4,7 +4,7 @@
 //
 //  Created by Бернат Данила on 01.11.2021.
 //
-
+#include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <chrono>
@@ -39,8 +39,11 @@ int main ()
     
     printf("%c\nСвой pid=%d\nРодительский pid=%d\n\n",print_time(*localtime(&tt), tp), getpid(), getppid());
     
-    
+    if (pid > 0){
+        system("ps -x");
+    }
 
         
     
 }
+
