@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "658834E6272FC01800A10814"
                BuildableName = "var1"
-               BlueprintName = "var1"
-               ReferencedContainer = "container:var1.xcodeproj">
+               BlueprintName = "part 2 var1"
+               ReferencedContainer = "container:part 2 var1.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,8 +47,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "658834E6272FC01800A10814"
             BuildableName = "var1"
-            BlueprintName = "var1"
-            ReferencedContainer = "container:var1.xcodeproj">
+            BlueprintName = "part 2 var1"
+            ReferencedContainer = "container:part 2 var1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -70,8 +70,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "658834E6272FC01800A10814"
             BuildableName = "var1"
-            BlueprintName = "var1"
-            ReferencedContainer = "container:var1.xcodeproj">
+            BlueprintName = "part 2 var1"
+            ReferencedContainer = "container:part 2 var1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
