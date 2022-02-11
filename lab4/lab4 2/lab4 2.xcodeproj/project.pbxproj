@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		656E43DF276727EE004CCB5E /* UnitTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 656E43DB276727EE004CCB5E /* UnitTests.c */; };
-		656E43E0276727EE004CCB5E /* UnitTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 656E43DC276727EE004CCB5E /* UnitTests.cpp */; };
 		656E43E1276727EE004CCB5E /* MemoryManager.c in Sources */ = {isa = PBXBuildFile; fileRef = 656E43DD276727EE004CCB5E /* MemoryManager.c */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +28,6 @@
 		656E43D9276727EE004CCB5E /* MemoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryManager.h; sourceTree = "<group>"; };
 		656E43DA276727EE004CCB5E /* benchmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = benchmark.h; sourceTree = "<group>"; };
 		656E43DB276727EE004CCB5E /* UnitTests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = UnitTests.c; sourceTree = "<group>"; };
-		656E43DC276727EE004CCB5E /* UnitTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnitTests.cpp; sourceTree = "<group>"; };
 		656E43DD276727EE004CCB5E /* MemoryManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MemoryManager.c; sourceTree = "<group>"; };
 		656E43DE276727EE004CCB5E /* UnitTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitTests.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,7 +66,6 @@
 				656E43DD276727EE004CCB5E /* MemoryManager.c */,
 				656E43D9276727EE004CCB5E /* MemoryManager.h */,
 				656E43DB276727EE004CCB5E /* UnitTests.c */,
-				656E43DC276727EE004CCB5E /* UnitTests.cpp */,
 				656E43DE276727EE004CCB5E /* UnitTests.h */,
 			);
 			path = "lab4 2";
@@ -133,7 +130,6 @@
 			files = (
 				656E43E1276727EE004CCB5E /* MemoryManager.c in Sources */,
 				656E43DF276727EE004CCB5E /* UnitTests.c in Sources */,
-				656E43E0276727EE004CCB5E /* UnitTests.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

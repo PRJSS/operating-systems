@@ -96,9 +96,9 @@ void test_init()
     printf("\n_init test:\n");
 
     TC tc[] = {
-        {.name = "1 element", .n = 1, .szPage = 1},
-        {.name = "10 elements", .n = 10, .szPage = 1},
-        {.name = "100 elements", .n = 100, .szPage = 1},
+        {.name = "1000 element", .n = 1000, .szPage = 1},
+        {.name = "1000000 elements", .n = 1000000, .szPage = 1},
+        {.name = "1000000000 elements", .n = 1000000000, .szPage = 1},
         {.name = "n * szPage == 0", .exp_rc = RC_ERR_INPUT, .n = 0, .szPage = 1},
         {.name = "n * szPage < 0", .exp_rc = RC_ERR_INPUT, .n = -1, .szPage = 1},
     };
@@ -127,14 +127,14 @@ void test_malloc()
     printf("\n_malloc test:\n");
 
     TC tc[] = {
-        {.name = "1 byte", .szBlock = 1},
-        {.name = "10 byte", .szBlock = 10},
-        {.name = "100 byte", .szBlock = 100},
+        {.name = "1000 byte", .szBlock = 1000},
+        {.name = "1000000 byte", .szBlock = 1000000},
+        {.name = "1000000000 byte", .szBlock = 1000000000},
         {.name = "0 size", .exp_rc = RC_ERR_INPUT, .szBlock = 0},
-        {.name = "Size out of range", .exp_rc = RC_ERR_INPUT, .szBlock = 999},
+        {.name = "Size out of range", .exp_rc = RC_ERR_INPUT, .szBlock = 2000000000},
     };
 
-    init_mmem(111, NULL, 0, 0);
+    init_mmem(1001001000, NULL, 0, 0);
 
     for (int i = 0; i < sizeof(tc) / sizeof(TC); i++)
     {
@@ -163,7 +163,7 @@ void test_write()
         {.name = "NULL buffer", .exp_rc = RC_ERR_INPUT, .ptr = (VA)0, .pBuffer = (char*)NULL, .szBuffer = 1},
         {.name = "0 size buffer", .exp_rc = RC_ERR_INPUT, .ptr = (VA)0, .pBuffer = (char*)1, .szBuffer = 0},
         {.name = "Negative ptr", .exp_rc = RC_ERR_SF, .ptr = (VA)-1, .pBuffer = (char*)1, .szBuffer = 1},
-        {.name = "Ptr out of range", .exp_rc = RC_ERR_SF, .ptr = (VA)999, .pBuffer = (char*)1, .szBuffer = 1},
+        {.name = "Ptr out of range", .exp_rc = RC_ERR_SF, .ptr = (VA)2000000000, .pBuffer = (char*)1, .szBuffer = 1},
     };
 
     init_mmem(3, NULL, 0, 1, 3);
@@ -194,7 +194,7 @@ void test_read()
         {.name = "\"Hi\"", .ptr = (VA)0, .szBuffer = 3},
         {.name = "0 size buffer", .exp_rc = RC_ERR_INPUT, .ptr = (VA)0, .szBuffer = 0},
         {.name = "Negative ptr", .exp_rc = RC_ERR_SF, .ptr = (VA)-1, .szBuffer = 1},
-        {.name = "Ptr out of range", .exp_rc = RC_ERR_SF, .ptr = (VA)999, .szBuffer = 1},
+        {.name = "Ptr out of range", .exp_rc = RC_ERR_SF, .ptr = (VA)2000000000, .szBuffer = 1},
     };
 
     char buf[] = "Hi";
@@ -233,7 +233,7 @@ void test_free()
     TC tc[] = {
         {.name = "\"Hi\"", .ptr = (VA)0},
         {.name = "Negative ptr", .exp_rc = RC_ERR_SF, .ptr = (VA)-1},
-        {.name = "Ptr out of range", .exp_rc = RC_ERR_SF, .ptr = (VA)999},
+        {.name = "Ptr out of range", .exp_rc = RC_ERR_SF, .ptr = (VA)2000000000},
     };
 
     char buf[] = "Hi";
@@ -272,6 +272,25 @@ void test_free()
     free(rbuf);
 }
 
+
+//void test_benchmark(int n){
+//
+//    int * array = (int *) malloc (1*sizeof(int));
+//
+//    TC tc[] = {
+//        { .n = 1000, .szPage = 1, .ptr = (VA)array},
+//    };
+//    tc[0].rc = _init(tc[0].n, tc[0].szPage);
+//
+//    init_mmem(n, array, n, NULL);
+//
+//    tc[0].rc = _malloc(&tc[0].ptr, tc[0].szBlock);
+//
+//
+//    tc[0].rc = _write(tc[0].ptr, array, n);
+//
+//}
+
 int main(int argc, char** argv)
 {
     test_init();
@@ -279,6 +298,13 @@ int main(int argc, char** argv)
     test_write();
     test_read();
     test_free();
+    
+    int n = 0;
+    printf("Enter number of bytes: ");
+    scanf("%d", &n);
+    
+    //test_benchmark(n);
+    
 
     system("pause");
     return 0;

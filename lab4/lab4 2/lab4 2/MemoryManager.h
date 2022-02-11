@@ -13,7 +13,7 @@
 #define _init(x, y) s_init(x, y)
 #define _malloc(x, y) s_malloc(x, y)
 
-typedef char* VA;	// Тип описывающий адрес блока 
+typedef char* VA; //tip opisyvaushiy adres bloka
 
 // ST is a queue that represents segments table.
 typedef struct _segment_table
@@ -108,3 +108,4 @@ int _write(VA ptr, char* pBuffer, size_t szBuffer);
 int _init(int n, int szPage);
 
 #endif  
+_write_write
